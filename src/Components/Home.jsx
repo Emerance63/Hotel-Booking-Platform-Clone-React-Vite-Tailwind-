@@ -285,8 +285,230 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Navbar />
-
-      <main />
+      
+      <main className="mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="rounded-xl border-4 border-[#febb02] bg-white shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            <div className="border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
+              <input
+                type="text"
+                placeholder="Where are you going?"
+                className="w-full outline-none placeholder:text-sm"
+              />
+            </div>
+            <div className="border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
+              <input
+                type="text"
+                placeholder="Check-in date  —  Check-out date"
+                className="w-full outline-none placeholder:text-sm"
+              />
+            </div>
+            <div className="border-b border-gray-200 p-4 md:col-span-3 md:border-b-0 md:border-r">
+              <input
+                type="text"
+                placeholder="2 adults · 0 children · 1 room"
+                className="w-full outline-none placeholder:text-sm"
+              />
+            </div>
+            <div className="md:col-span-1">
+              <button className="h-full w-full bg-[#0071c2] px-6 py-4 font-semibold text-white">
+                Search
+              </button>
+            </div>
+          </div>
+        </section>
+        <section className="mt-8">
+          <h2 className="text-2xl font-bold">Offers</h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Promotions, deals, and special offers for you
+          </p>
+          <div className="mt-4 flex flex-col items-center justify-between rounded-xl border border-gray-200 bg-white p-4 shadow-sm md:flex-row">
+            <div>
+              <span className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-600">
+                Escape for less with our Getaway Deals
+              </span>
+              <h3 className="mt-3 text-2xl font-bold">No catch. Just getaways.</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                At least 15% off select stays worldwide - just book and go.
+              </p>
+              <button className="mt-4 rounded bg-[#0071c2] px-4 py-2 text-sm font-semibold text-white">
+                Save with a Getaway Deal
+              </button>
+            </div>
+            <img
+              src="[images.unsplash.com](https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop)"
+              alt="Beach"
+              className="mt-4 h-24 w-24 rounded-lg object-cover md:mt-0"
+            />
+          </div>
+        </section>
+        <section className="mt-8">
+          <h2 className="text-2xl font-bold">Browse by property type</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {propertyTypes.map((item) => (
+              <div key={item.title} className="overflow-hidden rounded-xl">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-52 w-full rounded-xl object-cover"
+                />
+                <h3 className="mt-3 font-semibold">{item.title}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="mt-10">
+          <h2 className="text-2xl font-bold">Stay at our top unique properties</h2>
+          <p className="mt-1 text-sm text-gray-500">
+            From castles and villas to boats and igloos, we've got it all
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {uniqueProperties.map((item) => (
+              <PropertyCard
+                key={item.id}
+                item={item}
+                liked={!!favorites[item.id]}
+                onToggle={() => toggleFavorite(item.id)}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="mt-10">
+          <h2 className="text-2xl font-bold">Deals for the weekend</h2>
+          <p className="mt-1 text-sm text-gray-500">Save on stays for June 19 - June 21</p>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {weekendDeals.map((item) => (
+              <div
+                key={item.id}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+              >
+                <div className="relative">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-44 w-full object-cover"
+                  />
+                  <HeartButton
+                    active={!!favorites[item.id]}
+                    onClick={() => toggleFavorite(item.id)}
+                  />
+                </div>
+                <div className="p-3">
+                  {item.badge && (
+                    <span className="rounded bg-blue-600 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                      {item.badge}
+                    </span>
+                  )}
+                  <h3 className="mt-2 line-clamp-2 text-sm font-bold">{item.name}</h3>
+                  <p className="mt-1 text-xs text-gray-500">{item.location}</p>
+                  <Rating
+                    rating={item.rating}
+                    label={item.label}
+                    reviews={item.reviews}
+                  />
+                  {item.deal && (
+                    <span className="mt-2 inline-block rounded bg-green-600 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                      {item.deal}
+                    </span>
+                  )}
+                  <div className="mt-3 text-right">
+                    <div className="text-xs text-gray-500">
+                      {item.nights} nights{" "}
+                      {item.oldPrice && (
+                        <span className="ml-1 text-red-500 line-through">
+                          US${item.oldPrice}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-lg font-bold">US${item.price}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="mt-10">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-2xl font-bold">Homes guests love</h2>
+            <a href="#" className="text-sm font-medium text-[#0071c2]">
+              Discover homes
+            </a>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {homesGuestsLove.map((item) => (
+              <PropertyCard
+                key={item.id}
+                item={item}
+                liked={!!favorites[item.id]}
+                onToggle={() => toggleFavorite(item.id)}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="mt-10 rounded-xl border border-gray-200 p-6">
+          <h2 className="text-2xl font-bold">Travel more, spend less</h2>
+          <div className="mt-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+            <div>
+              <h3 className="font-semibold">Sign in, save money</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Save 10% or more at participating properties - just look for the
+                blue Genius label.
+              </p>
+              <div className="mt-4 flex gap-3">
+                <button className="rounded bg-[#0071c2] px-4 py-2 text-white">
+                  Sign in
+                </button>
+                <button className="rounded border border-[#0071c2] px-4 py-2 text-[#0071c2]">
+                  Register
+                </button>
+              </div>
+            </div>
+            <div className="rounded-xl bg-blue-50 px-6 py-4 text-center text-[#003b95]">
+              <div className="text-3xl">🎁</div>
+              <div className="font-bold">Genius</div>
+            </div>
+          </div>
+        </section>
+        <section className="mt-10 pb-12">
+          <h2 className="text-2xl font-bold">Popular with travelers from Rwanda</h2>
+          <div className="mt-4 flex gap-3">
+            <button className="rounded-full border border-[#0071c2] px-4 py-2 text-sm font-medium text-[#0071c2]">
+              Domestic cities
+            </button>
+            <button className="rounded-full px-4 py-2 text-sm text-gray-600">
+              International cities
+            </button>
+            <button className="rounded-full px-4 py-2 text-sm text-gray-600">
+              Countries
+            </button>
+          </div>
+          <div className="mt-6 text-sm text-gray-500">
+            Kigali hotels
+            <div className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
+              {[
+                "Countries",
+                "Regions",
+                "Cities",
+                "Districts",
+                "Airports",
+                "Hotels",
+                "Places of interest",
+                "Vacation Homes",
+                "Apartments",
+                "Resorts",
+                "Villas",
+                "Hostels",
+                "B&Bs",
+                "Guest Houses",
+                "Unique places to stay",
+                "All destinations",
+              ].map((item) => (
+                <span key={item}>{item} ·</span>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>
