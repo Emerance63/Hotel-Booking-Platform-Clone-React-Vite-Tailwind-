@@ -1,11 +1,12 @@
-import React from 'react'
-import Home from './Components/Home'
+import React from "react";
+import Landing from "./Pages/Landing";
+
 const App = () => {
   return (
     <div>
-      <Home />
+      <Landing />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
