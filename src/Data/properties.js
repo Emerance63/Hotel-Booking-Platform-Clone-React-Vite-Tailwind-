@@ -2,22 +2,22 @@ export const propertyTypes = [
   {
     title: "Hotels",
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-2.avif",
   },
   {
     title: "Apartments",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-3.avif",
   },
   {
     title: "Resorts",
     image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-4.avif",
   },
   {
     title: "Villas",
     image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-5.avif",
   },
 ];
 
@@ -32,7 +32,7 @@ export const uniqueProperties = [
     reviews: 177,
     price: 180,
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-6.avif",
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const uniqueProperties = [
     reviews: 308,
     price: 450,
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-1.avif",
     badge: "Genius",
   },
   {
@@ -57,7 +57,7 @@ export const uniqueProperties = [
     reviews: 274,
     price: 135,
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-2.avif",
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ export const uniqueProperties = [
     reviews: 321,
     price: 26,
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-3.avif",
     badge: "Genius",
   },
 ];
@@ -85,7 +85,7 @@ export const weekendDeals = [
     price: 37,
     nights: 2,
     image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-7.avif",
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 56,
@@ -100,7 +100,7 @@ export const weekendDeals = [
     price: 86,
     nights: 2,
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-8.avif",
   },
   {
     id: 7,
@@ -112,7 +112,7 @@ export const weekendDeals = [
     price: 96,
     nights: 2,
     image:
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-9.avif",
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 132,
@@ -127,7 +127,7 @@ export const weekendDeals = [
     price: 24,
     nights: 2,
     image:
-      "https://images.unsplash.com/photo-1505692952047-1a78307da8f2?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-10.avif",
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 32,
@@ -144,7 +144,7 @@ export const homesGuestsLove = [
     reviews: 3111,
     price: 174,
     image:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-11.avif",
   },
   {
     id: 10,
@@ -155,7 +155,7 @@ export const homesGuestsLove = [
     reviews: 106,
     price: 633,
     image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-12.avif",
   },
   {
     id: 11,
@@ -166,7 +166,7 @@ export const homesGuestsLove = [
     reviews: 10341,
     price: 136,
     image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-13.avif",
   },
   {
     id: 12,
@@ -177,6 +177,6 @@ export const homesGuestsLove = [
     reviews: 995,
     price: 410,
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+      "/src/assets/image/image-3.avif",
   },
 ];

@@ -19,7 +19,7 @@ export default function OffersSection() {
           </button>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop"
+          src="\src\assets\image\image-1.avif"
           alt="Beach"
           className="mt-4 h-24 w-24 rounded-lg object-cover md:mt-0"
         />
