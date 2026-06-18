@@ -36,7 +36,8 @@ export default function PopularDestinations() {
         Kigali hotels
         <div className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
           {destinations.map((item) => (
-            <span key={item}>{item} ·</span>
+            <span key={item}>
+                {item} ·</span>
           ))}
         </div>
       </div>
