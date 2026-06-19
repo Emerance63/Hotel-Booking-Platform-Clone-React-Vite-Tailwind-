@@ -15,13 +15,13 @@ import {
 export default function Landing() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      <Navbar />
+      <Navbar  />
 
       <main className="mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         <section className="rounded-xl border-4 border-[#febb02] bg-white shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
-              <input
+              <input  
                 type="text"
                 placeholder="Where are you going?"
                 className="w-full outline-none placeholder:text-sm"

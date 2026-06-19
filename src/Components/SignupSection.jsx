@@ -19,7 +19,7 @@ export default function SignupSection() {
           </div>
         </div>
         <div className="rounded-xl bg-blue-50 px-6 py-4 text-center text-[#003b95]">
-          <div className="text-3xl">🎁</div>
+          <div><img src="/public/giftbox.png" alt="Genius" className="w-20" /></div>
           <div className="font-bold">Genius</div>
         </div>
       </div>

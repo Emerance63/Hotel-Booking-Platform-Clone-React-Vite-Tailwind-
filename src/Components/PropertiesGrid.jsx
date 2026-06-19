@@ -7,7 +7,8 @@ export default function PropertiesGrid({ title, description, properties }) {
   const toggleFavorite = (id) => {
     setFavorites((prev) => ({
       ...prev,
-      [id]: !prev[id],
+      [id]: !prev[id],//spread function
+      
     }));
   };
 
