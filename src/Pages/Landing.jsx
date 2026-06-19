@@ -23,6 +23,13 @@ export default function Landing() {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(new Date(2026, 5)); // June 2026
 
+  const [adults, setAdults] = useState(2);
+  const [children, setChildren] = useState(0);
+  const [rooms, setRooms] = useState(1);
+  const [showTravelDropdown, setShowTravelDropdown] = useState(false);
+
+  const travelerDisplay = `${adults} adults · ${children} children · ${rooms} room${rooms > 1 ? "s" : ""}`;
+
   // Format date for display
   const formatDate = (date) => {
     if (!date) return "";
@@ -190,12 +197,81 @@ export default function Landing() {
                 </div>
               )}
             </div>
-            <div className="border-b border-gray-200 p-4 md:col-span-3 md:border-b-0 md:border-r">
+            <div className="relative border-b border-gray-200 p-4 md:col-span-3 md:border-b-0 md:border-r">
               <input
                 type="text"
-                placeholder="2 adults · 0 children · 1 room"
-                className="w-full outline-none placeholder:text-sm"
+                value={travelerDisplay}
+                onFocus={() => setShowTravelDropdown(true)}
+                onBlur={() =>
+                  setTimeout(() => setShowTravelDropdown(false), 150)
+                }
+                readOnly
+                className="w-full bg-transparent outline-none text-sm cursor-pointer"
               />
+              {showTravelDropdown && (
+                <div className="absolute left-0 top-full z-10 mt-2 w-full rounded-xl border border-gray-200 bg-white shadow-lg p-4">
+                  <div className="space-y-4">
+                    {[
+                      {
+                        label: "Adults",
+                        value: adults,
+                        setValue: setAdults,
+                        min: 1,
+                      },
+                      {
+                        label: "Children",
+                        value: children,
+                        setValue: setChildren,
+                        min: 0,
+                      },
+                      {
+                        label: "Rooms",
+                        value: rooms,
+                        setValue: setRooms,
+                        min: 1,
+                      },
+                    ].map(({ label, value, setValue, min }) => (
+                      <div
+                        key={label}
+                        className="flex items-center justify-between"
+                      >
+                        <div>
+                          <div className="font-semibold">{label}</div>
+                        </div>
+                        <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white p-1">
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() => setValue(Math.max(min, value - 1))}
+                            className="h-8 w-8 rounded-full border border-gray-300 text-lg leading-6 text-gray-700 hover:bg-gray-100"
+                          >
+                            —
+                          </button>
+                          <div className="w-8 text-center text-sm font-semibold">
+                            {value}
+                          </div>
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() => setValue(value + 1)}
+                            className="h-8 w-8 rounded-full border border-gray-300 text-lg leading-6 text-gray-700 hover:bg-gray-100"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => setShowTravelDropdown(false)}
+                      className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+                    >
+                      Done
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="md:col-span-1">
               <button className="h-full w-full bg-[#0071c2] px-6 py-4 font-semibold text-white">
