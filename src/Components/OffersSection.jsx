@@ -1,3 +1,5 @@
+import image1 from "../assets/image/image-1.avif";
+
 export default function OffersSection() {
   return (
     <section className="mt-8">
@@ -19,7 +21,7 @@ export default function OffersSection() {
           </button>
         </div>
         <img
-          src="\src\assets\image\image-1.avif"
+          src={image1}
           alt="Beach"
           className="mt-4 h-24 w-24 rounded-lg object-cover md:mt-0"
         />

@@ -1,23 +1,33 @@
+import image1 from "../assets/image/image-1.avif";
+import image2 from "../assets/image/image-2.avif";
+import image3 from "../assets/image/image-3.avif";
+import image4 from "../assets/image/image-4.avif";
+import image5 from "../assets/image/image-5.avif";
+import image6 from "../assets/image/image-6.avif";
+import image7 from "../assets/image/image-7.avif";
+import image8 from "../assets/image/image-8.avif";
+import image9 from "../assets/image/image-9.avif";
+import image10 from "../assets/image/image-10.avif";
+import image11 from "../assets/image/image-11.avif";
+import image12 from "../assets/image/image-12.avif";
+import image13 from "../assets/image/image-13.avif";
+
 export const propertyTypes = [
   {
     title: "Hotels",
-    image:
-      "/src/assets/image/image-2.avif",
+    image: image2,
   },
   {
     title: "Apartments",
-    image:
-      "/src/assets/image/image-3.avif",
+    image: image3,
   },
   {
     title: "Resorts",
-    image:
-      "/src/assets/image/image-4.avif",
+    image: image4,
   },
   {
     title: "Villas",
-    image:
-      "/src/assets/image/image-5.avif",
+    image: image5,
   },
 ];
 
@@ -31,8 +41,7 @@ export const uniqueProperties = [
     label: "Very Good",
     reviews: 177,
     price: 180,
-    image:
-      "/src/assets/image/image-6.avif",
+    image: image6,
   },
   {
     id: 2,
@@ -43,8 +52,7 @@ export const uniqueProperties = [
     label: "Excellent",
     reviews: 308,
     price: 450,
-    image:
-      "/src/assets/image/image-1.avif",
+    image: image1,
     badge: "Genius",
   },
   {
@@ -56,8 +64,7 @@ export const uniqueProperties = [
     label: "Excellent",
     reviews: 274,
     price: 135,
-    image:
-      "/src/assets/image/image-2.avif",
+    image: image2,
   },
   {
     id: 4,
@@ -68,8 +75,7 @@ export const uniqueProperties = [
     label: "Excellent",
     reviews: 321,
     price: 26,
-    image:
-      "/src/assets/image/image-3.avif",
+    image: image3,
     badge: "Genius",
   },
 ];
@@ -84,8 +90,7 @@ export const weekendDeals = [
     reviews: 29,
     price: 37,
     nights: 2,
-    image:
-      "/src/assets/image/image-7.avif",
+    image: image7,
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 56,
@@ -99,8 +104,7 @@ export const weekendDeals = [
     reviews: 5,
     price: 86,
     nights: 2,
-    image:
-      "/src/assets/image/image-8.avif",
+    image: image8,
   },
   {
     id: 7,
@@ -111,8 +115,7 @@ export const weekendDeals = [
     reviews: 8,
     price: 96,
     nights: 2,
-    image:
-      "/src/assets/image/image-9.avif",
+    image: image9,
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 132,
@@ -126,8 +129,7 @@ export const weekendDeals = [
     reviews: 22,
     price: 24,
     nights: 2,
-    image:
-      "/src/assets/image/image-10.avif",
+    image: image10,
     badge: "Genius",
     deal: "Getaway Deal",
     oldPrice: 32,
@@ -143,8 +145,7 @@ export const homesGuestsLove = [
     label: "Excellent",
     reviews: 3111,
     price: 174,
-    image:
-      "/src/assets/image/image-11.avif",
+    image: image11,
   },
   {
     id: 10,
@@ -154,8 +155,7 @@ export const homesGuestsLove = [
     label: "Exceptional",
     reviews: 106,
     price: 633,
-    image:
-      "/src/assets/image/image-12.avif",
+    image: image12,
   },
   {
     id: 11,
@@ -165,8 +165,7 @@ export const homesGuestsLove = [
     label: "Excellent",
     reviews: 10341,
     price: 136,
-    image:
-      "/src/assets/image/image-13.avif",
+    image: image13,
   },
   {
     id: 12,
@@ -176,7 +175,6 @@ export const homesGuestsLove = [
     label: "Wonderful",
     reviews: 995,
     price: 410,
-    image:
-      "/src/assets/image/image-3.avif",
+    image: image3,
   },
 ];

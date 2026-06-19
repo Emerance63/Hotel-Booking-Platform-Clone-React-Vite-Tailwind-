@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import PropertyTypeSection from "../Components/PropertyTypeSection";
@@ -13,6 +14,10 @@ import {
 } from "../Data/properties";
 
 export default function Landing() {
+  const destinations = ["Kigali", "Nairobi", "Kampala", "Paris"];
+  const [destination, setDestination] = useState(destinations[0]);
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Navbar  />
@@ -20,12 +25,34 @@ export default function Landing() {
       <main className="mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         <section className="rounded-xl border-4 border-[#febb02] bg-white shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
-              <input  
+            <div className="relative border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
+              <input
                 type="text"
+                value={destination}
+                onFocus={() => setShowDropdown(true)}
+                onChange={(e) => setDestination(e.target.value)}
+                onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
                 placeholder="Where are you going?"
-                className="w-full outline-none placeholder:text-sm"
+                className="w-full bg-transparent outline-none text-sm"
               />
+              {showDropdown && (
+                <div className="absolute left-0 top-full z-10 mt-2 w-full rounded-xl border border-gray-200 bg-white shadow-lg">
+                  {destinations.map((place) => (
+                    <button
+                      key={place}
+                      type="button"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => {
+                        setDestination(place);
+                        setShowDropdown(false);
+                      }}
+                      className="w-full px-4 py-3 text-left text-sm hover:bg-gray-100"
+                    >
+                      {place}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="border-b border-gray-200 p-4 md:col-span-4 md:border-b-0 md:border-r">
               <input
